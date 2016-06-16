@@ -1,4 +1,11 @@
 <div class='container'>
+
+  <div class="navbar-right">
+    <%= link_to "Read", @article %> |
+    <%= link_to "Edit", @article, method: :put  %> |
+    <%= link_to "View History", article_versions_path(@article) %>
+  </div>
+
   <div id='article-table-of-contents'>
     <ol>
     <% @sections.each do |section| %>

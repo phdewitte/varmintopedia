@@ -1,15 +1,12 @@
 <div class="container">
 
-  <h2>Search Results</h2>
+  <h3> <%= @versions.first.title %>: Revision History </h3>
 
-  <h4>Your search for "<%= params[:search_criteria] %>" returned <%= pluralize(@versions.size, 'article') %></h4>
+  <ul>
+    <% @versions.each do |version| %>
 
-  <% @versions.each do |version| %>
-    <%= link_to "#{version.title}", article_path(version.article_id) %>
-    <br>
-    <%= version.body %>
-    <br>
-    <br>
-  <% end %>
-
+    <li><%= link_to version.title , version_path(version) %></li>
+    <% end %>
+  </ul>
 </div>
+
