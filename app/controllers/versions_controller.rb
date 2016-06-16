@@ -4,7 +4,8 @@ class VersionsController < ApplicationController
   end
 
   def new
-    @version = Version.new
+    @article = Ariticle.find_by(params[:article_id])
+    @version = @article.versions.new(version_params)
   end
 
   def create
@@ -19,6 +20,6 @@ class VersionsController < ApplicationController
 
   private
     def version_params
-      params.require(:version).permit(:title, :body, :editor_id, :article_id)
+      params.require(:version).permit(:title, :body, :editor_id)
     end
 end
