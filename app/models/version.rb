@@ -2,6 +2,7 @@ class Version < ActiveRecord::Base
   belongs_to :editor, class_name: "User"
   belongs_to :article
 
+
   def add_ids_to_h1s
     sections = []
     body_html = Nokogiri::HTML(self.body)
@@ -13,5 +14,14 @@ class Version < ActiveRecord::Base
       i += 1
     end
     return sections
+  end
+
+  def self.search(criteria)
+    if criteria
+      where('title LIKE ?', "%#{criteria}%")
+      where('body LIKE ?', "%#{criteria}%")
+    else
+      where(true)
+    end
   end
 end

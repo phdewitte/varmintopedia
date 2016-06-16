@@ -7,10 +7,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @sections = @article.versions.last.add_ids_to_h1s
     p @sections
+    # @articles = Article.search(params[:search_criteria])
   end
 
   def new
-    @article = Article.new
+    # @article = Article.new
     @version = Version.new
     if user_signed_in?
       render 'new'
@@ -19,5 +20,13 @@ class ArticlesController < ApplicationController
     end
   end
 
-  private
+  def show
+    @article = Article.find(params[:id])
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to root_url
+  end
 end
