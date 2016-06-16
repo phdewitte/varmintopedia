@@ -8,6 +8,7 @@ class Article < ActiveRecord::Base
 
   after_save :assign_categories
 
+
   def current
     versions.last
   end
@@ -34,7 +35,7 @@ class Article < ActiveRecord::Base
   def assign_categories
     if @category_names
       self.categories = @category_names.split(/\s+/).map do |name|
-        Tag.find_or_create_by_name(name)
+        Category.find_or_create_by_name(name)
       end
     end
   end
