@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @sections = @article.versions.last.add_ids_to_h1s
   end
 
   def new
