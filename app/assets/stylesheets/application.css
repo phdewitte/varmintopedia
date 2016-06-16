@@ -19,11 +19,20 @@ body {
   color: #454647;
 }
 
-.featured-article {
+.row {
   background-color: #F5F5F2;
   border-bottom: 1px solid #BFBFB8;
+  padding: 10px;
   margin: 10px;
 }
+
+.featured-article h3 {
+  margin: 0px;
+}
+
+/*.featured-article-img {
+  margin-top: 5px;
+}*/
 
 .page-header {
   margin: 0px;
@@ -127,4 +136,6 @@ h1 {
 .new-form {
   padding-bottom: 10px;
 }
+
+
 
