@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :articles
+
+  resources :articles, except: [:create]
+  resources :versions, only: [:create, :index]
 
   devise_for :users
 
