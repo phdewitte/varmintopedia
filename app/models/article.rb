@@ -13,4 +13,8 @@ class Article < ActiveRecord::Base
   def body
     current.body
   end
+
+  def category_names
+    current.category_names
+  end
 end
