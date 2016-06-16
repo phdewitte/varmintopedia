@@ -1,16 +1,6 @@
 class VersionsController < ApplicationController
-  def index
-    @versions = Version.search(params[:search_criteria])
-  end
-
-  def new
-    @article = Ariticle.find_by(params[:article_id])
-    @version = @article.versions.new(version_params)
-  end
-
   before_action :set_version, only: [:show]
   before_action :set_article, only: [:create, :index]
-
 
   def index
     @versions = @article.versions
@@ -25,7 +15,7 @@ class VersionsController < ApplicationController
 
     respond_to do |format|
       if @version.save
-        format.html { redirect_to @version, notice: 'version was successfully created.' }
+        format.html { redirect_to @article, notice: 'version was successfully created.' }
         format.json { render :show, status: :created, location: @version }
       else
         format.html { render :new }

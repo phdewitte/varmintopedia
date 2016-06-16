@@ -20,8 +20,8 @@ User.all.each do |user|
     title: Faker::Superhero.name,
     body: Faker::Hipster.paragraph(4),
     editor: user,
-    article: article)
-    # category_names: Faker::Hipster.words(4).join(' '))
+    article: article,
+    category_names: Faker::Hipster.words(4).join(' '))
 end
 
 User.all.each do |user|
@@ -29,6 +29,6 @@ User.all.each do |user|
     title: Faker::Superhero.name,
     body: Faker::Hipster.paragraph(4),
     editor: user,
-    article: Article.all.sample)
-    # category_names: Faker::Hipster.words(4).join(' '))
+    article: Article.all.sample,
+    category_names: Faker::Hipster.words(4).join(' '))
 end
