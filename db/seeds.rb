@@ -7,10 +7,28 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 10.times do |i|
-  User.create!(email: Faker::Internet.email, password: Faker::Internet.password)
+  User.create!(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password)
 end
 
 User.all.each do |user|
-  article = Article.create!(author: user)
-  Version.create!(title: Faker::Superhero.name, body: Faker::Hipster.paragraph(4), editor: user, article: article)
+  article = Article.create!(
+    author: user)
+
+  Version.create(
+    title: Faker::Superhero.name,
+    body: Faker::Hipster.paragraph(4),
+    editor: user,
+    article: article,
+    category_names: Faker::Hipster.words(4).join(' '))
+end
+
+User.all.each do |user|
+  Version.create(
+    title: Faker::Superhero.name,
+    body: Faker::Hipster.paragraph(4),
+    editor: user,
+    article: Article.all.sample,
+    category_names: Faker::Hipster.words(4).join(' '))
 end

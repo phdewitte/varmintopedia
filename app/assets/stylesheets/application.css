@@ -19,11 +19,20 @@ body {
   color: #454647;
 }
 
-.featured-article {
+.row {
   background-color: #F5F5F2;
   border-bottom: 1px solid #BFBFB8;
+  padding: 10px;
   margin: 10px;
 }
+
+.featured-article h3 {
+  margin: 0px;
+}
+
+/*.featured-article-img {
+  margin-top: 5px;
+}*/
 
 .page-header {
   margin: 0px;
@@ -78,6 +87,12 @@ body {
   padding-top: 10px;
 }
 
+.alerts {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
 h1 {
   font-family: 'Amatic SC', cursive;
   font-weight: 700;
@@ -117,4 +132,10 @@ h1 {
   padding-top: 5px;
   text-transform: uppercase;
 }
+
+.new-form {
+  padding-bottom: 10px;
+}
+
+
 

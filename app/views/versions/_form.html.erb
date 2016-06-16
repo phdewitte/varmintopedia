@@ -1,0 +1,25 @@
+<%= form_for @version do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body, :class => 'ckeditor' %>
+  </div>
+  <div>
+    <%= f.label :category_names %>
+    <%= f.text :category_names %>
+  </div>
+  <div>
+    <%= f.check_box :published  %>
+    <%= f.label :published %>
+  </div>
+  <div>
+    <%= f.check_box :has_bibliography  %>
+    <%= f.label :has_bibliography %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

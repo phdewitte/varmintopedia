@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(version: 20160615212033) do
 
   create_table "categorizations", force: :cascade do |t|
     t.integer  "category_id"
-    t.integer  "article_id"
+    t.integer  "version_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "categorizations", ["article_id"], name: "index_categorizations_on_article_id", using: :btree
   add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id", using: :btree
+  add_index "categorizations", ["version_id"], name: "index_categorizations_on_version_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -62,10 +62,12 @@ ActiveRecord::Schema.define(version: 20160615212033) do
   create_table "versions", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
+    t.boolean  "published",        default: false
+    t.boolean  "has_bibliography", default: false
     t.integer  "editor_id"
     t.integer  "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "versions", ["article_id"], name: "index_versions_on_article_id", using: :btree
