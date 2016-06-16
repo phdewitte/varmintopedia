@@ -1,0 +1,17 @@
+<p>
+  <strong>Title:</strong>
+  <%= @version.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @version.body %>
+</p>
+
+<p>
+  <strong>Created:</strong>
+  <%= @version.created_at %>
+</p>
+
+<!-- Path won't work, right? Has to know article id -->
+<%= link_to 'Back', versions_path (@article) %>
