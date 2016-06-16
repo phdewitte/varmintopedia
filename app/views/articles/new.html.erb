@@ -1,7 +1,14 @@
-<%= form_for @version do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :body %>
-  <%= f.text_area :body, :class => 'ckeditor' %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= form_for @version do |f| %>
+    <div class='new-form'>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class='new-form'>
+      <%= f.label :body %>
+      <%= f.text_area :body, :class => 'ckeditor' %>
+    </div>
+      <%= f.submit %>
+      <% end %>
+
+</div>
