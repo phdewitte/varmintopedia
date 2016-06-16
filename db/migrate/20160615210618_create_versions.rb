@@ -4,7 +4,7 @@ class CreateVersions < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.boolean :published, default: false
-      t.boolean :bibliography, default: false
+      t.boolean :has_bibliography, default: false
 
       t.references :editor, index: true
       t.references :article, index: true, foreign_key: true

@@ -13,4 +13,5 @@
   <%= @version.created_at %>
 </p>
 
-<%= link_to 'Back', versions_path %>
+<!-- Path won't work, right? Has to know article id -->
+<%= link_to 'Back', versions_path (@article) %>
