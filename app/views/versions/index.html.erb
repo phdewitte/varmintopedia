@@ -1,11 +1,10 @@
 <div class="container">
-  <h1><%= @article %> versions</h1>
 
   <h3> <%= @versions.first.title %>: Revision History </h3>
 
   <ul>
     <% @versions.each do |version| %>
-      <li><%= link_to version.title , version_path(version) %></li>
+      <li><%= link_to version.title , version_path(version) %> - <%= version.created_at %>  </li>
     <% end %>
   </ul>
 
