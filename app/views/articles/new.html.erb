@@ -1,0 +1,5 @@
+<%= form_for @version do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :body, :class => 'ckeditor' %>
+  <%= f.submit %>
+<% end %>
