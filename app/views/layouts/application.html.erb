@@ -3,6 +3,7 @@
 <head>
   <title>Varmintopedia</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag '//cdn.ckeditor.com/4.5.9/standard/ckeditor.js' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
@@ -16,13 +17,13 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <%= erb :"_nav" %>
-  <%= erb :"_header" %>
+  <%= render "layouts/nav" %>
+  <%= render "layouts/header" %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
 
-  <%= erb :"_footer" %>
+  <%= render "layouts/footer" %>
 </body>
 </html>
