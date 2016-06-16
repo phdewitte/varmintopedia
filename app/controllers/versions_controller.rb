@@ -1,7 +1,6 @@
 class VersionsController < ApplicationController
-
   def index
-    @versions = Verison.all
+    @versions = Version.search(params[:search_criteria])
   end
 
   def new
