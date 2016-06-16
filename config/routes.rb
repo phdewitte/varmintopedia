@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :articles do
-    resources :versions, except: [:destroy, :edit, :update]
-  end
+  resources :articles
+  # resources :versions, except: [:destroy, :edit, :update]
+
   resources :categories, only: [:index, :show]
 
 
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/users/:id' => 'users#show', as: :user
   get '/users' => 'users#index', as: :users
-<<<<<<< HEAD
+  patch '/users/:id' => 'users#update'
 
   get '/versions/search' => 'versions#search'
 
@@ -24,7 +24,4 @@ Rails.application.routes.draw do
 
   get '/version/:id' => 'versions#show', as: :version
 
-=======
-  patch '/users/:id' => 'users#update'
->>>>>>> d7b6fa9e87be63f5a542e755475fd34073e7f13c
 end

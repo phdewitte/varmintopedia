@@ -26,9 +26,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    # @article = Article.find(params[:id])
-    # @version = @article.versions.last
-    # @article.versions.create()
+    @article = Article.find(params[:id])
+    render '/versions/_form'
   end
 
   def destroy
