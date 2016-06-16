@@ -1,4 +1,12 @@
 class VersionsController < ApplicationController
+  def index
+    @versions = Version.search(params[:search_criteria])
+  end
+
+  def new
+    @article = Ariticle.find_by(params[:article_id])
+    @version = @article.versions.new(version_params)
+  end
 
   def create
     @categories = Category.all
@@ -17,4 +25,3 @@ class VersionsController < ApplicationController
     params.require(:version).permit(:title, :body)
   end
 end
-

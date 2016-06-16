@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h2>Search Results</h2>
+
+  <h4>Your search for "<%= params[:search_criteria] %>" returned <%= pluralize(@versions.size, 'article') %></h4>
+
+  <% @versions.each do |version| %>
+    <%= link_to "#{version.title}", article_path(version.article_id) %>
+    <br>
+    <%= version.body %>
+    <br>
+    <br>
+  <% end %>
+
+</div>
