@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :articles, except: [:edit, :update] do
-    resources :versions, only: [:index, :new, :create]
-  end
+
+  resources :articles
+  resources :versions, only: [:create, :index]
 
   root 'welcome#index'
 

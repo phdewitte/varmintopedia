@@ -4,11 +4,13 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
-  end
-
-  def create
-    @article = Article.new
+    # @article = Article.new
+    @version = Version.new
+    if user_signed_in?
+      render 'new'
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def show

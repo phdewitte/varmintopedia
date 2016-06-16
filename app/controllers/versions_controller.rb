@@ -1,4 +1,5 @@
 class VersionsController < ApplicationController
+
   def index
     @versions = Verison.all
   end
@@ -9,17 +10,18 @@ class VersionsController < ApplicationController
   end
 
   def create
-    @version = Version.new(version_params)
+    @article = Article.create(author_id: current_user.id)
+    @version = Version.new(title: article_params[:title], body: article_params[:body], editor_id: current_user.id, article_id: @article.id)
     if @version.save
-      redirect_to article_path
+      render 'articles/show'
     else
-      @errors = @version.errors.full_messages
-      render 'new'
+      render 'articles/new'
     end
   end
 
   private
-    def version_params
-      params.require(:version).permit(:title, :body, :editor_id)
-    end
+
+  def article_params
+    params.require(:version).permit(:title, :body)
+  end
 end
