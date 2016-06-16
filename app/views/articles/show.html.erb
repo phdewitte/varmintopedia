@@ -1,2 +1,14 @@
-<h1><%= @article.versions.last.title %></h1>
-<p><%= @article.versions.last.body %></p>
+<div class='container'>
+  <div id='article-table-of-contents'>
+    <ol>
+    <% @sections.each do |section| %>
+      <li><%= section.html_safe %></li>
+    <% end %>
+    </ol>
+  </div>
+
+  <div id='article-contents'>
+    <h1><%= @article.versions.last.title %></h1>
+    <p><%= @article.versions.last.body.html_safe %></p>
+  </div>
+</div>

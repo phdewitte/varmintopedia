@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Welcome <%= current_user.email %></h1>
+  <ul>
+    <li><% @articles = current_user.versions %></li>
+    <li><% @articles.each do |article| %></li>
+    <li><%= article.title %></li>
+  </ul>
+    <%= link_to "Edit users", users_path %>
+  <% if current_user.admin? %>
+   <%= link_to "Edit users", users %>
+  <% end %>
+<% end %>
+</div>

@@ -1,25 +1,30 @@
 <h1><%= @article %> versions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Published</th>
-      <th>Editor</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+  <div class="container">
 
-  <tbody>
-    <% @versions.each do |version| %>
+  <h2>Search Results</h2>
+
+  <h4>Your search for "<%= params[:search_criteria] %>" returned <%= pluralize(@versions.size, 'article') %></h4>
+
+  <table>
+    <thead>
       <tr>
-        <td><%= version.created_at %></td>
-        <td><%= version.editor %></td>
-        <td><%= link_to 'Show', version %></td>
+        <th>Published</th>
+        <th>Editor</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @versions.each do |version| %>
+        <tr>
+          <td><%= version.created_at %></td>
+          <td><%= version.editor %></td>
+          <td><%= link_to "Show", article_path(version.article_id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <br>
-
-<%= link_to 'New Version', new_version_path (@article) %>
+</div>
