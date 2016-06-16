@@ -6,14 +6,10 @@ class Version < ActiveRecord::Base
 
   validates_presence_of :title, :body
 
-  attr_writer :category_names
-
+  attr_accessor :category_names
   after_save :assign_categories
 
-  def category_names
-    @category_names || categories.map(&:name).join(' ')
-  end
-    
+
   private
   
   def assign_categories
