@@ -78,6 +78,12 @@ body {
   padding-top: 10px;
 }
 
+.alerts {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
 h1 {
   font-family: 'Amatic SC', cursive;
   font-weight: 700;

@@ -10,7 +10,9 @@ class UsersController < ApplicationController
     @aticles = @user.versions
   end
 
-  def destroy
-
+  def update
+    @user = User.find(params[:id])
+    @user.update_attribute :admin, true
+    redirect_to users_path
   end
 end
