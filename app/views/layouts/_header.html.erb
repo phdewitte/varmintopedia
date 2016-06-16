@@ -10,13 +10,13 @@
   </div>
   <div class="header-right category-list">
     <ul>
-      <li>Fuzzy</li>
-      <li>Blind</li>
-      <li>Water-loving</li>
-      <li>Rabid</li>
-      <li>Underground</li>
-      <li>Naked</li>
-      <li><b>See All...</b></li>
+      <% @categories.each do |category| %>
+        <li><%= category.name %></li>
+      <% end %>
     </ul>
   </div>
 </div>
+
+
+
+
