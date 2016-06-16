@@ -12,7 +12,6 @@ class Version < ActiveRecord::Base
       sections << "<a href='##{i}'>#{h1s[i].text}</a>"
       i += 1
     end
-    p sections
     return sections
   end
 end
