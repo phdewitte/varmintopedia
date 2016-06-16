@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
     @categories = Category.all
     @article = Article.find(params[:id])
     @sections = @article.versions.last.add_ids_to_h1s
-    p @sections
     # @articles = Article.search(params[:search_criteria])
   end
 
@@ -22,10 +21,6 @@ class ArticlesController < ApplicationController
     else
       redirect_to new_user_session_path
     end
-  end
-
-  def show
-    @article = Article.find(params[:id])
   end
 
   def destroy
