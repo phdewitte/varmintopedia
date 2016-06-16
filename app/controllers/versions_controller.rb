@@ -1,5 +1,10 @@
 class VersionsController < ApplicationController
   def index
+    @article = Article.find(params[:article_id])
+    @versions = @article.versions
+  end
+
+  def search
     @versions = Version.search(params[:search_criteria])
   end
 
@@ -16,6 +21,10 @@ class VersionsController < ApplicationController
     else
       render 'articles/new'
     end
+  end
+
+  def show
+    @version = Version.find(params[:id])
   end
 
   private
