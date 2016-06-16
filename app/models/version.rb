@@ -27,7 +27,7 @@ class Version < ActiveRecord::Base
     if criteria
       where('title LIKE ?', "%#{criteria}%")
       where('body LIKE ?', "%#{criteria}%")
-    else
+    elsegg
       where(true)
     end
   end
