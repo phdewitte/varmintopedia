@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :articles, except: [:create]
+  resources :articles
   resources :versions, only: [:create, :index]
 
   root 'welcome#index'
