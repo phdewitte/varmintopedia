@@ -1,9 +1,11 @@
 class VersionsController < ApplicationController
   def index
+    @categories = Category.all
     @versions = Version.search(params[:search_criteria])
   end
 
   def new
+    @categories = Category.all
     @article = Ariticle.find_by(params[:article_id])
     @version = @article.versions.new(version_params)
   end
