@@ -1,7 +1,15 @@
+<div class="container">
 
+  <h2>Search Results</h2>
 
-<% @versions.each do |version| %>
-  <%= version.title %>
-  <br>
-  <%= version.body %>
-<% end %>
+  <h4>Your search returned <%= pluralize(@versions.size, 'article') %></h4>
+
+  <% @versions.each do |version| %>
+    <%= link_to "#{version.title}", article_path(version.article_id) %>
+    <br>
+    <%= version.body %>
+    <br>
+    <br>
+  <% end %>
+
+</div>
