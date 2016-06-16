@@ -16,5 +16,5 @@ User.all.each do |user|
 end
 
 User.all.each do |user|
-  Version.create!(article:Article.all.sample, title: Faker::Superhero.name, body: Faker::Hipster.paragraph(4), editor: user)
+  Version.create!(article: Article.all.sample, title: Faker::Superhero.name, body: Faker::Hipster.paragraph(4), editor: user)
 end
