@@ -1,18 +1,15 @@
 class ArticlesController < ApplicationController
   def index
-    @categories = Category.all
     @articles = Article.all
   end
 
   def show
-    @categories = Category.all
     @article = Article.find(params[:id])
     @sections = @article.versions.last.add_ids_to_h1s
     # @articles = Article.search(params[:search_criteria])
   end
 
   def new
-    @categories = Category.all
     @article = Article.new
     # @article = Article.new
     @version = Version.new
