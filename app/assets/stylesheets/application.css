@@ -18,8 +18,19 @@ body {
   margin-bottom: 60px;
 }
 
+.featured-article {
+  background-color: #F5F5F2;
+  border-bottom: 1px solid #BFBFB8;
+  margin: 10px;
+}
+
 .page-header {
   margin: 0px;
+}
+
+.center-text {
+  text-align: center;
+  width:  100%;
 }
 
 .header-left {
@@ -32,6 +43,8 @@ body {
   display: inline-block;
   width: 30%;
   vertical-align: text-top;
+  padding-left: 20px;
+  padding-top: 25px;
 }
 
 .search {
@@ -43,8 +56,14 @@ body {
   padding-left: 50px;
 }
 
+.category-list {
+    -webkit-columns: 100px 2; /* Chrome, Safari, Opera */
+    -moz-columns: 100px 2; /* Firefox */
+    columns: 100px 2;
+}
+
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 60px;
@@ -96,3 +115,4 @@ h1 {
   padding-top: 5px;
   text-transform: uppercase;
 }
+
