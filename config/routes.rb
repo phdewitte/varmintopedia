@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :articles
 
-  devise_for :users
+  root 'welcome#index'
 
-  root "categories#index"
+  devise_for :users
 end
