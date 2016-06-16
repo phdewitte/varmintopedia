@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615212033) do
+ActiveRecord::Schema.define(version: 20160616232420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20160615212033) do
 
   add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id", using: :btree
   add_index "categorizations", ["version_id"], name: "index_categorizations_on_version_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "url"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "images", ["article_id"], name: "index_images_on_article_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -73,5 +82,6 @@ ActiveRecord::Schema.define(version: 20160615212033) do
   add_index "versions", ["article_id"], name: "index_versions_on_article_id", using: :btree
   add_index "versions", ["editor_id"], name: "index_versions_on_editor_id", using: :btree
 
+  add_foreign_key "images", "articles"
   add_foreign_key "versions", "articles"
 end
