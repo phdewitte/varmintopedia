@@ -22,12 +22,27 @@ body {
   margin: 0px;
 }
 
-.search {
-  margin-right: auto;
-  margin-left: auto;
-  width: 300px;
-
+.header-left {
+  display: inline-block;
+  width: 60%;
+  vertical-align: text-top;
 }
+
+.header-right {
+  display: inline-block;
+  width: 30%;
+  vertical-align: text-top;
+}
+
+.search {
+  width: 300px;
+  padding-left: 50px;
+}
+
+.header-text {
+  padding-left: 50px;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -40,11 +55,6 @@ body {
   color: #F5F5F2;
   text-align: center;
   padding-top: 20px;
-}
-
-.center-text {
-  text-align: center;
-
 }
 
 h1 {
