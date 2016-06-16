@@ -1,0 +1,25 @@
+<h1><%= @article %> versions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Published</th>
+      <th>Editor</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @versions.each do |version| %>
+      <tr>
+        <td><%= version.created_at %></td>
+        <td><%= version.editor %></td>
+        <td><%= link_to 'Show', version %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Version', new_version_path %>

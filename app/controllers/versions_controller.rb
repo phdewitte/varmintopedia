@@ -1,9 +1,19 @@
 class VersionsController < ApplicationController
+
   before_action :set_version, only: [:show]
+  before_action :set_article, only: [:create, :index]
+
+
+  def index
+    @versions = @article.versions
+  end
+
+  def new
+    @version = Version.new
+  end
 
   def create
-    @article = Article.find_by(id: params[:article_id])
-    @article.versions.new(version_params) ## Does this syntax work?
+    @article.versions.new(version_params)
 
     respond_to do |format|
       if @version.save
@@ -16,6 +26,7 @@ class VersionsController < ApplicationController
     end
   end
 
+
   private
 
   def version_params
@@ -24,6 +35,10 @@ class VersionsController < ApplicationController
 
   def set_version
     @version = Version.find(params[:id])
+  end
+
+  def set_article
+    @article = Article.find_by(id: params[:article_id])
   end
 end
 
