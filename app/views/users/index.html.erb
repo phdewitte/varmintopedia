@@ -1,0 +1,7 @@
+<div class="container">
+  <% @users.each do |user| %>
+  <p>email: <%= user.email %>   admin: <%= user.admin %>  <%= link_to "Change Admin Privilagess", edit_user_registration_path(user) %></p>
+  <% end %>
+
+
+</div>
