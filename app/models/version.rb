@@ -1,7 +1,7 @@
 class Version < ActiveRecord::Base
   belongs_to :editor, class_name: "User"
   belongs_to :article
-  has_many :categorizations, through: :article, :dependent => :destroy
+  has_many :categorizations, :dependent => :destroy
   has_many :categories, through: :categorizations
 
   validates_presence_of :title, :body
@@ -36,6 +36,7 @@ class Version < ActiveRecord::Base
   private
   
   def assign_categories
+    @category_names
     if @category_names
       self.categories = @category_names.split(/\s+/).map do |name|
         Category.find_or_create_by(name: name)
