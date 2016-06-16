@@ -14,3 +14,7 @@ User.all.each do |user|
   article = Article.create!(author: user)
   Version.create!(title: Faker::Superhero.name, body: Faker::Hipster.paragraph(4), editor: user, article: article)
 end
+
+User.all.each do |user|
+  Version.create!(article:Article.all.sample, title: Faker::Superhero.name, body: Faker::Hipster.paragraph(4), editor: user)
+end
