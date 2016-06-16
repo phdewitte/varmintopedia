@@ -16,9 +16,13 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-<%= erb :"_nav" %>
-<%= erb :"_header" %>
-<%= yield %>
-<%= erb :"_footer" %>
+  <%= erb :"_nav" %>
+  <%= erb :"_header" %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+
+  <%= erb :"_footer" %>
 </body>
 </html>
