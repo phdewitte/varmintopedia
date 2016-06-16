@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :versions, only: [:create, :index]
 
   resources :categories, only: [:index, :show]
+  resources :versions, except: [:destroy, :edit, :update]
 
   root 'welcome#index'
 
