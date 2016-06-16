@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>categories</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td><%= link_to 'Show', category %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
