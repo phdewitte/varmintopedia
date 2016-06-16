@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     resources :versions, only: [:index, :new, :create]
   end
 
+  root 'welcome#index'
+
   devise_for :users
 
-  root "welcome#index"
 end
