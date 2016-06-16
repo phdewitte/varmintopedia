@@ -5,9 +5,13 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  devise_for :users
+  devise_for :users do
+    collection do
+      patch 'add_admin', :action => :add_admin
+    end
+  end
 
   get '/users/:id' => 'users#show', as: :user
   get '/users' => 'users#index', as: :users
-
+  patch '/users/:id' => 'users#update'
 end
