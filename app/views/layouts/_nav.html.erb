@@ -9,18 +9,18 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#"><img src="/assets/rat-logo.png" width="75px"></a>
-      <a class="navbar-brand navbar-brand-text" href="#">Varmint-O-Pedia</a>
+      <a class="navbar-brand navbar-brand-text" href="/">Varmint-O-Pedia</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" \>
         <% if user_signed_in? %>
-          <li><a href="#"><%= current_user.email %></a></li>
-          <li><a href="#">logout</a></li>
+          <li><%= link_to current_user.email, user_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path %></li>
         <% else %>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
