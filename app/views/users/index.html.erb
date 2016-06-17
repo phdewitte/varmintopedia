@@ -1,7 +1,5 @@
 <div class="container">
   <% @users.each do |user| %>
-  <p>email: <%= user.email %>   admin: <%= user.admin %>  <%= link_to "Change Admin Privilagess", user, method: :patch %></p>
+  <p>email: <%= user.email %>   admin: <%= user.admin %>  <%= link_to "Change Admin Privileges", user, method: :patch %></p>
   <% end %>
-
-
 </div>
