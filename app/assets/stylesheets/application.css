@@ -19,6 +19,10 @@ body {
   color: #454647;
 }
 
+img {
+  max-width: 300px;
+}
+
 .icon-bar {
   background-color: #ffffff;
 }
