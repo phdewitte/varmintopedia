@@ -1,0 +1,156 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+body {
+  margin-bottom: 60px;
+  color: #454647;
+}
+
+.row {
+  background-color: #F5F5F2;
+  border-bottom: 1px solid #BFBFB8;
+  padding: 10px;
+  margin: 10px;
+}
+
+h3 {
+  margin: 0px;
+}
+
+.btn-danger a {
+  color: #ffffff;
+}
+
+.btn-lg {
+  width: 200px;
+}
+
+/*.featured-article-img {
+  margin-top: 5px;
+}*/
+
+.page-header {
+  margin: 0px;
+}
+
+.center-text {
+  text-align: center;
+  width:  100%;
+}
+
+.header-left {
+  display: inline-block;
+  width: 60%;
+  vertical-align: text-top;
+}
+
+.header-right {
+  display: inline-block;
+  width: 30%;
+  vertical-align: text-top;
+  padding-left: 20px;
+  padding-top: 25px;
+}
+
+.search {
+  width: 400px;
+  padding-left: 50px;
+}
+
+.header-text {
+  padding-left: 50px;
+}
+
+.category-list {
+    -webkit-columns: 100px 2; /* Chrome, Safari, Opera */
+    -moz-columns: 100px 2; /* Firefox */
+    columns: 100px 2;
+}
+
+.categories {
+    -webkit-columns: 100px 4; /* Chrome, Safari, Opera */
+    -moz-columns: 100px 4; /* Firefox */
+    columns: 100px 4;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #6A6887;
+}
+
+.text-muted {
+  color: #F5F5F2;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.alerts {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+}
+
+.navbar {
+  height: 60px;
+  background-color: #6A6887;
+  }
+
+.navbar-nav li a:hover {
+  background-color: #6A6887;
+}
+
+.navbar-brand, .navbar-nav li a {
+  color: #F5F5F2;
+  height: 20px;
+}
+
+.navbar-brand {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-brand-text {
+  padding-top: 20px;
+  font-size: xx-large;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+}
+
+.navbar-brand-text:hover {
+  color: #F5F5F2;
+}
+
+.navbar-right {
+  padding-top: 5px;
+  text-transform: uppercase;
+}
+
+.new-form {
+  padding-bottom: 10px;
+}
+
+
+
