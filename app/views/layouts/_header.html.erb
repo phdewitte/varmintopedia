@@ -10,10 +10,12 @@
 
   </div>
   <div class="header-right category-list">
+    <% random_header_categories = all_categories.sample(7) %>
     <ul>
-      <% all_categories.each do |category| %>
+      <% random_header_categories.each do |category| %>
         <li><a href="#"><%= category.name %></a></li>
       <% end %>
+      <li><b><%= link_to 'All categories', categories_path %></b></li>
     </ul>
   </div>
 </div>
