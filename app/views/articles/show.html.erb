@@ -1,6 +1,6 @@
 <div class='container'>
 
-  <div class="navbar-right">
+  <div class="navbar-right right-style">
     <%= link_to "Read", @article %> |
     <%= link_to "Edit", edit_article_path(@article)  %> |
     <%= link_to "View History", article_versions_path(@article) %>
@@ -16,7 +16,7 @@
 
   <div id='article-contents'>
     <h1><%= @article.versions.last.title %></h1>
-    <img src="<%= @article.random_img_path %>"" alt="varmint" class="img-responsive">
+    <img src="<%= @article.random_img_path %>" alt="varmint" class="img-responsive img-thumbnail">
     <p><%= @article.versions.last.body.html_safe %></p>
   </div>
 </div>

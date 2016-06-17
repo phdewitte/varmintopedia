@@ -2,14 +2,14 @@
   <h1>Featured Articles:</h1>
 
   <% homepage_articles = Article.all %>
-  
+
   <% featured_articles_num.times do |i| %>
     <div class="row">
       <% article = homepage_articles.sample %>
       <% homepage_articles = homepage_articles.where.not(id: article.id) %>
 
       <div class="col-md-3 featured-article-img">
-        <img src="<%= article.random_img_path %>" alt="varmint" class="img-responsive">
+        <img src="<%= article.random_img_path %>" alt="varmint" class="img-responsive img-thumbnail">
       </div>
       <div class="col-md-8 featured-article">
         <h3><%= link_to article.title, article_path(article) %></h3>
