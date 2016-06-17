@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @article = @version.article
-    @versions = @article.versions
+    @versions = @article.versions.order(created_at: :desc)
   end
 
   def show

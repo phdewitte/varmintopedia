@@ -4,7 +4,7 @@ class VersionsController < ApplicationController
 
   def index
     @article = Article.find(params[:article_id])
-    @versions = @article.versions
+    @versions = @article.versions.order(created_at: :desc)
   end
 
   def search

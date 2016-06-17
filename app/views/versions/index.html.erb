@@ -4,7 +4,7 @@
 
   <ul>
     <% @versions.each do |version| %>
-      <li><%= link_to version.title , version_path(version) %> - <%= version.created_at.strftime('%B %e, %Y') %>  </li>
+      <li><%= link_to version.title , version_path(version) %> - <%= version.created_at.strftime('%B %e, %Y, %l:%M %p') %>  </li>
     <% end %>
   </ul>
 
