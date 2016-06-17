@@ -1,12 +1,12 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# feature 'Functionality for user the is not logged in' do
-#   scenario 'User can edit article' do
-#     visit '/'
-#     click_link "Edit" #maybe button or tab
+feature 'Functionality for user the is not logged in' do
+  scenario 'User can Login' do
+    visit '/'
+    click_link "Login" #maybe button or tab
 
-#     expect(page).to have_button('Edit')
-#   end
+    expect(page).to have_link('Login')
+  end
 
 #   scenario 'User can see bibliography section' do
 #     visit '/'
@@ -15,11 +15,14 @@
 #     expect(page).to have_content('References')
 #   end
 
-#   scenario 'User can see contents section' do
-#     visit '/'
+  # scenario 'User can see edit article' do
+  #   article = Article.create!(author: 1)
+  #   version = Version.create!(title: "test test", body: "bobbbbb", published: true, editor: 1, article: 1, has_bibliography: true)
 
-#     expect(page).to have_content('Contents')
-#   end
+  #   visit '/articles/1'
+
+  #   expect(page).to have_link('Edit')
+  # end
 
 #   # scenario 'User can see picture of an animal' do
 #   #   visit '/'
@@ -66,4 +69,4 @@
 
 #     expect(page).to have_button('Search Article')
 #   end
-# end
+end
