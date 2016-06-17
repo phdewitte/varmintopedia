@@ -5,8 +5,9 @@
   <ul>
       <% @articles.each do |article| %>
       <li><%= article.title %></li>
+      <% end %>
     </ul>
-  <% end %>
+
   </div>
 
   <% if current_user.admin? %>
