@@ -21,8 +21,7 @@ class Article < ActiveRecord::Base
   end
 
   def self.placeholder_image
-    # "/assets/rat-logo.png"
-    image_tage('rat-logo.png')
+    "/assets/rat-logo.png"
   end
 
   def random_img_path
