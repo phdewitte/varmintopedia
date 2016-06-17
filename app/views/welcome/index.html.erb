@@ -1,7 +1,7 @@
   <div class="container featured-articles">
   <h1>Featured Articles:</h1>
     <div class="row">
-      <% article1 = @articles.sample %>
+      <% article1 = Article.all.sample %>
       <% homepage_articles = Article.where.not(id: article1.id) %>
 
       <div class="col-md-3 featured-article-img">
