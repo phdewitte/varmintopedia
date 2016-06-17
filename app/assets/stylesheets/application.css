@@ -80,6 +80,12 @@ h3 {
     columns: 100px 2;
 }
 
+.categories {
+    -webkit-columns: 100px 4; /* Chrome, Safari, Opera */
+    -moz-columns: 100px 4; /* Firefox */
+    columns: 100px 4;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
