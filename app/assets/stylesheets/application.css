@@ -26,8 +26,16 @@ body {
   margin: 10px;
 }
 
-.featured-article h3 {
+h3 {
   margin: 0px;
+}
+
+.btn-danger a {
+  color: #ffffff;
+}
+
+.btn-lg {
+  width: 200px;
 }
 
 /*.featured-article-img {

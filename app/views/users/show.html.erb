@@ -1,12 +1,20 @@
 <div class="container">
-  <% if current_user.admin? %>
-   <button class='btn btn-default'><%= link_to "Edit users", users_path %></button>
-  <% end %>
   <h1>Welcome <%= current_user.email %></h1>
+  <div class="row">
+  <h3>Manage your articles:</h3>
   <ul>
-    <li><% @articles = current_user.versions %></li>
-    <li><% @articles.each do |article| %></li>
-    <li><%= article.title %></li>
-  </ul>
-<% end %>
+      <li><% @articles = current_user.versions %></li>
+      <li><% @articles.each do |article| %></li>
+      <li><%= article.title %></li>
+    </ul>
+  <% end %>
+  </div>
+
+  <% if current_user.admin? %>
+    <div class="row">
+      <h3>Manage your users:</h3>
+      <button class='btn btn-danger btn-lg'><%= link_to "Edit users", users_path %></button>
+    </div>
+  <% end %>
+
 </div>
