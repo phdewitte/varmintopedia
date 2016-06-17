@@ -40,7 +40,7 @@ class VersionsController < ApplicationController
   private
 
   def version_params
-    params.require(:version).permit(:title, :body, :editor_id)
+    params.require(:version).permit(:title, :body, :published, :has_bibliography)
   end
 
   def set_version
