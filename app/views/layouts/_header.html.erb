@@ -13,7 +13,7 @@
     <% random_header_categories = all_categories.sample(7) %>
     <ul>
       <% random_header_categories.each do |category| %>
-        <li><a href="#"><%= category.name %></a></li>
+        <li><%= link_to category.name, category %></li>
       <% end %>
       <li><b><%= link_to 'All categories', categories_path %></b></li>
     </ul>
