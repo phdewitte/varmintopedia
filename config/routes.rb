@@ -24,4 +24,6 @@ Rails.application.routes.draw do
 
   get '/version/:id' => 'versions#show', as: :version
 
+  post '/articles/:article_id/versions' => 'articles#update', as: :versions
+
 end

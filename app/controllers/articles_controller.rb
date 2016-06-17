@@ -1,9 +1,7 @@
 class ArticlesController < ApplicationController
   def index
-    p "this is the article"
-    p @article = @version.article
-    p "these are the versions"
-    p @versions = @article.versions
+    @article = @version.article
+    @versions = @article.versions
   end
 
   def show
@@ -23,16 +21,37 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @last_version = @article.versions.last
+    @version = @last_version.dup
+    p @version.inspect
+    p @last_version.inspect
+    render '/versions/_form'
   end
 
   def update
-    @article = Article.find(params[:id])
-    render '/versions/_form'
+    @article = Article.find(params[:article_id])
+    @version = @article.versions.create(version_params)
+
+    respond_to do |format|
+      if @version.save
+        format.html { redirect_to @article, notice: 'version was successfully created.' }
+        format.json { render :show, status: :created, location: @version }
+      else
+        format.html { render :new }
+        format.json { render json: @version.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to root_url
+  end
+
+  private
+
+  def version_params
+    params.require(:version).permit(:title, :body)
   end
 end

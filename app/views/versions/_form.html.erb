@@ -1,4 +1,4 @@
-<%= form_for @version do |f| %>
+<%= form_for [@article, @version] do |f| %>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -9,7 +9,7 @@
   </div>
   <div>
     <%= f.label :category_names %>
-    <%= f.text :category_names %>
+    <%= f.text_field :category_names %>
   </div>
   <div>
     <%= f.check_box :published  %>
