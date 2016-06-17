@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(email: "test@test.com", password: "test")
+
 10.times do |i|
   User.create!(
     email: Faker::Internet.email,
@@ -25,10 +27,12 @@ User.all.each do |user|
 end
 
 User.all.each do |user|
+  @article = 
   Version.create(
+    article: Article.all.sample,
     title: Faker::Superhero.name,
     body: Faker::Hipster.paragraph(4),
     editor: user,
-    article: Article.all.sample,
     category_names: Faker::Hipster.words(4).join(' '))
 end
+
