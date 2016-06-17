@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    @article = Article.create(author: current_user)
     @version = Version.new
     if user_signed_in?
       render 'new'
