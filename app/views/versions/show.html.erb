@@ -1,10 +1,10 @@
 <div class="container">
 
-  <h3> <%= @version.title %> </h3>
+  <h3><%= @version.title %></h3>
 
   <h5> Revision Number: <%= @version.id %></h5>
 
-  <h5> Created On: <%= @version.created_at %></h5>
+  <h5> Created On: <%= @version.created_at.strftime('%B %e, %Y, %l:%M %p') %></h5>
 
   <p><%= @version.body %></p>
 
