@@ -2,7 +2,7 @@
 
   <div class="navbar-right">
     <%= link_to "Read", @article %> |
-    <%= link_to "Edit", @article, method: :put  %> |
+    <%= link_to "Edit", edit_article_path(@article)  %> |
     <%= link_to "View History", article_versions_path(@article) %>
   </div>
 
