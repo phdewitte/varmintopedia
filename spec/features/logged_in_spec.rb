@@ -1,30 +1,29 @@
 # require 'rails_helper'
 
-# feature 'Functionality for user the is not logged in' do
+# feature 'Signing in' do
+#   background do
+#     User.create!(email: "a@a.com", password:"password")
+#   end
 
-#   scenario 'Logged in user can see that logged in status' do
-#     user = User.create!(email: "m@m.com", password:"password")
-
+#   scenario 'Signing in with correct credentials' do
 #     visit '/'
-#     click_link 'Sign Up'
-#     fill_in 'user[name]', with: 'm@m.com'
+#     click_link 'Login'
+#     fill_in 'user[email]', with: 'a@a.com'
 #     fill_in 'user[password]', with: 'password'
-#     click_button 'Sign Up'
+#     click_button 'Log in'
 
-#     expect(page).to have_content "m@m"
-
+#     expect(page).to have_content "a@a.com"
 #   end
-
-#   scenario 'Logged in user can create article' do
-
-#   end
-
-#   scenario "When user creates edit user name shows next to article" do
-
-#   end
-
-#   scenario 'logged in user can see all of the contributions made' do
-
-#   end
-
 # end
+# #   scenario 'Logged in user can create article' do
+
+# #   end
+
+# #   scenario "When user creates edit user name shows next to article" do
+
+# #   end
+
+# #   scenario 'logged in user can see all of the contributions made' do
+
+# #   end
+
