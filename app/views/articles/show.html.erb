@@ -16,6 +16,7 @@
 
   <div id='article-contents'>
     <h1><%= @article.versions.last.title %></h1>
+    <img src="<%= @article.try(:images).try(:sample).try(:url) || "/assets/rat-logo.png" %>" alt="varmint" class="img-responsive">
     <p><%= @article.versions.last.body.html_safe %></p>
   </div>
 </div>
