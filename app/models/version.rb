@@ -45,7 +45,7 @@ class Version < ActiveRecord::Base
 
   def assign_images
     if @image_urls
-      self.images = @image_urls.split(/\s+/).map do |url|
+      self.article.images = @image_urls.split(/\s+/).map do |url|
         Image.find_or_create_by(url: url)
       end
     end
