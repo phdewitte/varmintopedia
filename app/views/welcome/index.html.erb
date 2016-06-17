@@ -1,7 +1,9 @@
 <div class="container featured-articles">
   <h1>Featured Articles:</h1>
+
   <% homepage_articles = Article.all %>
-  <% 2.times do |i| %>
+  
+  <% featured_articles_num.times do |i| %>
     <div class="row">
       <% article = homepage_articles.sample %>
       <% homepage_articles = homepage_articles.where.not(id: article.id) %>
