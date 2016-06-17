@@ -1,15 +1,3 @@
 <div class="container">
-  <%= form_for @version do |f| %>
-    <div class='new-form'>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
-    <div class='new-form'>
-      <%= f.label :body %>
-      <%= f.text_area :body, :class => 'ckeditor' %>
-    </div>
-    <div>
-      <%= f.submit %>
-    </div>
-  <% end %>
+  <%= render '/versions/form' %>
 </div>

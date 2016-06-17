@@ -1,29 +1,32 @@
-<%= form_for [@article, @version] do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :body %>
-    <%= f.text_area :body, :class => 'ckeditor' %>
-  </div>
-  <div>
-    <%= f.label :category_names %>
-    <%= f.text_field :category_names %>
-  </div>
-  <div>
-    <%= f.label :image_urls %>
-    <%= f.text_field :image_urls %>
-  </div>
-  <div>
-    <%= f.check_box :published  %>
-    <%= f.label :published %>
-  </div>
-  <div>
-    <%= f.check_box :has_bibliography  %>
-    <%= f.label :has_bibliography %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="container">
+  <h1>Create a new article:</h1>
+    <%= form_for [@article, @version] do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :body %>
+      <%= f.text_area :body, :class => 'ckeditor' %>
+    </div>
+    <div>
+      <%= f.label :category_names %>
+      <%= f.text_field :category_names %>
+    </div>
+    <div>
+      <%= f.label :image_urls %>
+      <%= f.text_field :image_urls %>
+    </div>
+    <div>
+      <%= f.check_box :published  %>
+      <%= f.label :published %>
+    </div>
+    <div>
+      <%= f.check_box :has_bibliography  %>
+      <%= f.label :has_bibliography %>
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
