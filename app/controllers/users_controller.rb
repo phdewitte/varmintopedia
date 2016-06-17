@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @aticles = @user.versions
+    @articles = @user.versions
   end
 
   def update
