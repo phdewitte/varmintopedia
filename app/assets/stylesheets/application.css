@@ -19,6 +19,13 @@ body {
   color: #454647;
 }
 
+.icon-bar {
+  background-color: #ffffff;
+}
+.navbar-collapse {
+  background-color: #6A6887;
+}
+
 .row {
   background-color: #F5F5F2;
   border-bottom: 1px solid #BFBFB8;
@@ -26,7 +33,7 @@ body {
   margin: 10px;
 }
 
-h3 {
+h3, .page-header {
   margin: 0px;
 }
 
@@ -38,12 +45,11 @@ h3 {
   width: 200px;
 }
 
-/*.featured-article-img {
-  margin-top: 5px;
-}*/
-
-.page-header {
-  margin: 0px;
+.login-register {
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+  margin-top: 30px;
 }
 
 .center-text {
