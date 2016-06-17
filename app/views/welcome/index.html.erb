@@ -1,28 +1,19 @@
-  <div class="container featured-articles">
+<div class="container featured-articles">
   <h1>Featured Articles:</h1>
+  <% homepage_articles = Article.all %>
+  <% 2.times do |i| %>
     <div class="row">
-      <% article1 = Article.all.sample %>
-      <% homepage_articles = Article.where.not(id: article1.id) %>
+      <% article = homepage_articles.sample %>
+      <% homepage_articles = homepage_articles.where.not(id: article.id) %>
 
       <div class="col-md-3 featured-article-img">
-        <img src="<%= article1.try(:images).try(:sample).try(:url) || "/assets/rat-logo.png" %>" alt="varmint" class="img-responsive">
+        <img src="<%= article.random_img_path %>" alt="varmint" class="img-responsive">
       </div>
       <div class="col-md-8 featured-article">
-        <h3><%= link_to article1.title, article_path(article1) %></h3>
-        <p><%= article1.body %></p>
+        <h3><%= link_to article.title, article_path(article) %></h3>
+        <p><%= article.body %></p>
       </div>
     </div>
-
-    <div class="row">
-      <% article2 = homepage_articles.sample %>
-
-      <div class="col-md-3 featured-article-img">
-        <img src="<%= article2.try(:images).try(:sample).try(:url) || "/assets/rat-logo.png" %>" alt="varmint" class="img-responsive">
-      </div>
-      <div class="col-md-8 featured-article">
-        <h3><%= link_to article2.title, article_path(article2) %></h3>
-        <p><%= article2.body %></p>
-      </div>
-    </div>
-  </div>
+  <% end %>
+</div>
 
