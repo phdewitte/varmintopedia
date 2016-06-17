@@ -3,10 +3,9 @@
     <div class="row">
       <% article1 = @articles.sample %>
       <% homepage_articles = Article.where.not(id: article1.id) %>
-      <% image1 = article1.try(:images).try(:sample) %>
 
       <div class="col-md-3 featured-article-img">
-        <img src="<%= image1.try(:url) %>" alt="<%= article1.title %>">
+        <img src="<%= article1.try(:images).try(:sample).try(:url) || "/assets/rat-logo.png" %>" alt="varmint" class="img-responsive">
       </div>
       <div class="col-md-8 featured-article">
         <h3><%= link_to article1.title, article_path(article1) %></h3>
@@ -16,9 +15,9 @@
 
     <div class="row">
       <% article2 = homepage_articles.sample %>
-      <% image2 = article2.try(:images).try(:sample) %>
+
       <div class="col-md-3 featured-article-img">
-        <img src="<%= image2.try(:url) %>" class="img-responsive img-thumbnail" alt="<%= article2.title %>">
+        <img src="<%= article2.try(:images).try(:sample).try(:url) || "/assets/rat-logo.png" %>" alt="varmint" class="img-responsive">
       </div>
       <div class="col-md-8 featured-article">
         <h3><%= link_to article2.title, article_path(article2) %></h3>
