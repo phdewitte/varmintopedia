@@ -10,38 +10,24 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
 body {
   margin-bottom: 60px;
   color: #454647;
 }
 
-.icon-bar {
-  background-color: #ffffff;
-}
-
-.navbar-collapse {
-  background-color: #6A6887;
-}
-
 .row {
-  background-color: #E8E8E3;
-  border-bottom: 1px solid #454647;
+  background-color: #F5F5F2;
+  border-bottom: 1px solid #BFBFB8;
   padding: 10px;
   margin: 10px;
 }
 
-#article-contents {
-  background-color: #E8E8E3;
-  border-bottom: 1px solid #454647;
-  padding: 10px;
-  margin-top: 50px;
-}
-
-h3, .page-header {
+h3 {
   margin: 0px;
 }
 
@@ -53,11 +39,12 @@ h3, .page-header {
   width: 200px;
 }
 
-.login-register {
-  margin-right: auto;
-  margin-left: auto;
-  width: 300px;
-  margin-top: 30px;
+/*.featured-article-img {
+  margin-top: 5px;
+}*/
+
+.page-header {
+  margin: 0px;
 }
 
 .center-text {
@@ -86,11 +73,6 @@ h3, .page-header {
 
 .header-text {
   padding-left: 50px;
-}
-
-.right-style {
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .category-list {
