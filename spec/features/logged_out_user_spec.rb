@@ -69,7 +69,7 @@ feature 'Visiting pages when not logged in' do
   scenario 'visiting a featured article' do
     visit '/'
     within first('.featured-article') do
-      find(:css, 'h3 a').click
+      find(:css, 'h1 a').click
     end
     expect(page).to have_content "Read | Edit | View History"
   end
