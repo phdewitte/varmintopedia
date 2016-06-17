@@ -23,8 +23,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @last_version = @article.versions.last
     @version = @last_version.dup
-    p @version.inspect
-    p @last_version.inspect
     render '/versions/_form'
   end
 
