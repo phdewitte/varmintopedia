@@ -29,6 +29,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:article_id])
     @version = @article.versions.create(version_params)
+    @version.editor = current_user
 
     respond_to do |format|
       if @version.save

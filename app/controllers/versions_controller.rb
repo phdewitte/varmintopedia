@@ -16,7 +16,11 @@ class VersionsController < ApplicationController
   end
 
   def create
-    @article.versions.new(version_params)
+    p params + "&&&" * 50
+    @version = @article.versions.new(version_params)
+    @version.editor = current_user
+    p current_user
+    p "++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
     respond_to do |format|
       if @version.save
@@ -36,7 +40,7 @@ class VersionsController < ApplicationController
   private
 
   def version_params
-    params.require(:version).permit(:title, :body)
+    params.require(:version).permit(:title, :body, :editor_id)
   end
 
   def set_version
